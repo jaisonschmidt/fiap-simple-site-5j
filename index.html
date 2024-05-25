@@ -20,15 +20,25 @@
         <meta property="og:image" content="https://fiap.com.br/imagem.jpg" />
         <meta property="og:url" content="https://www.colbyfayock.com" />
     </head>
-    <body>
+    <body data-theme="light">
         <main class="mainContent">
             <img 
                 class="mainBanner"
                 src="https://source.unsplash.com/768x300/?nature" 
                 alt="Imagem randômica da natureza"
+                id="changeTheme"
             >
             <h1 class="mainTitle">Título da página</h1>
             <p>Slogan da minha página</p>
         </main>
+
+        <script>
+            const changeTheme = document.getElementById('changeTheme');
+
+            changeTheme.addEventListener('click', () => {
+                const theme = document.body.getAttribute('data-theme');
+                document.body.setAttribute('data-theme', theme === 'light' ? 'dark' : 'light');
+            });
+        </script>
     </body>
 </html>
